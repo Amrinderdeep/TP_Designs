@@ -1,0 +1,8 @@
+@font-face {
+    font-family: 'HelloSnowflake';
+    src: url('/public/fonts/Hello_Snowflake.ttf') format('ttf'),
+}
+
+h1{
+    font-family: HelloSnowflake;
+}

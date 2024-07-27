@@ -1,0 +1,15 @@
+.section {
+    padding-top: 70px; /* Adjust this value based on your navbar height */
+    text-align: center;
+  }
+  
+  /* Remove the margin-top from these sections */
+  #carousel-section,
+  #cards-section,
+  #content-section,
+  #contact-section {
+    padding-top: 70px;
+  }
+  
+
+  

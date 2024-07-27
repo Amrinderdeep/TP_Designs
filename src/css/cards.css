@@ -1,0 +1,73 @@
+/* General styles for the cards */
+.custom-card {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    border: 3px solid #927f78;
+    border-radius: 10px; 
+    margin: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+    transform: scale(0.85);
+  }
+  
+  .custom-card:hover {
+    transform: scale(1.0);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  }
+  
+  .card-img-top {
+    flex-shrink: 0;
+    object-fit: cover; /* Ensure image covers the card without distortion */
+    width: 100%;
+    height: auto; /* Maintain aspect ratio */
+  }
+  
+  .card-body {
+    flex: 1 1 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  
+  /* Fade-in animation for the cards */
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  .custom-card {
+    animation: fadeIn 0.5s ease-in-out;
+  }
+  
+  /* Media Queries for mobile horizontal view */
+  @media (max-width: 767px) and (orientation: landscape) {
+    .custom-card {
+      margin: 5px; /* Reduce margin for better fit on smaller screens */
+      transform: scale(0.9); /* Slightly larger scale for better visibility */
+    }
+  
+    .card-img-top {
+      height: 150px; /* Fixed height for images to ensure uniformity */
+      object-fit: cover; /* Ensure images cover the space without distortion */
+    }
+    
+    /* Display three cards per row on mobile horizontal view */
+    .row {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+    }
+  
+    .col {
+      flex: 0 1 30%; /* Three columns per row */
+      max-width: 30%;
+    }
+  }
+  

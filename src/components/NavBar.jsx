@@ -54,7 +54,7 @@ export const NavBar = () => {
     <Navbar collapseOnSelect expand="lg" style={navbarStyle} sticky="top">
       <Container>
         <img
-          src="public/img/logo.png"
+          src="img/logo.png"
           width="50"
           height="50"
           className="d-inline-block align-top me-3"

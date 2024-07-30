@@ -34,7 +34,7 @@ export const Banner = () => {
     <Image
       style={bannerStyle}
       className="d-block w-100"
-      src="/public/img/banner2.jpg"
+      src="img/banner2.jpg"
       alt="Banner"
     />
   );

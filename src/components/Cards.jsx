@@ -11,37 +11,37 @@ export const Cards = () => {
       <Row xs={1} md={3} className="g-3">
         <Col>
           <Card className="h-100 custom-card">
-            <Card.Img variant="top" src="/img/card1.jpg" />
+            <Card.Img variant="top" src="img/card1.jpg" />
           </Card>
         </Col>
         <Col>
           <Card className="h-100 custom-card">
-            <Card.Img variant="top" src="/img/card2.jpg" />
+            <Card.Img variant="top" src="img/card2.jpg" />
           </Card>
         </Col>
         <Col>
           <Card className="h-100 custom-card">
-            <Card.Img variant="top" src="/img/card3.jpg" />
+            <Card.Img variant="top" src="img/card3.jpg" />
           </Card>
         </Col>
         <Col>
           <Card className="h-100 custom-card">
-            <Card.Img variant="top" src="/img/card4.jpg" />
+            <Card.Img variant="top" src="img/card4.jpg" />
           </Card>
         </Col>
         <Col>
           <Card className="h-100 custom-card">
-            <Card.Img variant="top" src="/img/card5.jpg" />
+            <Card.Img variant="top" src="img/card5.jpg" />
           </Card>
         </Col>
         <Col>
           <Card className="h-100 custom-card">
-            <Card.Img variant="top" src="/img/card6.jpg" />
+            <Card.Img variant="top" src="img/card6.jpg" />
           </Card>
         </Col>
       </Row>
         <Image
-        src="/public/img/clients.png" 
+        src="img/clients.png" 
         className="w-100"
         />
     </Container>

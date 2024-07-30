@@ -123,7 +123,7 @@ export const Intro = () => {
           <Row className="g-0">
             <Col xs={6} className="p-0 me-auto" style={{marginLeft:'100px'}}>
               <Image 
-                src="/img/intro1.jpg"
+                src="img/intro1.jpg"
                 className="w-100"
                 alt="Intro 1"
                 style={imageStyle}
@@ -135,7 +135,7 @@ export const Intro = () => {
           <Row className="g-0">
             <Col xs={6} className="p-0 ms-auto" style={{marginRight:'100px'}}>
               <Image 
-                src="/img/intro2.jpg"
+                src="img/intro2.jpg"
                 className="w-100"
                 alt="Intro 2"
                 style={imageStyle}

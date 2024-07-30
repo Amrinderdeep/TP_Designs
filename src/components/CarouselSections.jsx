@@ -57,49 +57,49 @@ export const CarouselSections = () => {
         <Carousel.Item>
           <Image
             className="d-block w-100 img-fluid"
-            src="/img/carousel1.jpg"
+            src="img/carousel1.jpg"
             alt="First slide"
           />
         </Carousel.Item>
         <Carousel.Item>
           <Image
             className="d-block w-100 img-fluid"
-            src="/img/carousel2.jpg"
+            src="img/carousel2.jpg"
             alt="Second slide"
           />
         </Carousel.Item>
         <Carousel.Item>
           <Image
             className="d-block w-100 img-fluid"
-            src="/img/carousel3.jpg"
+            src="img/carousel3.jpg"
             alt="Third slide"
           />
         </Carousel.Item>
         <Carousel.Item>
           <Image
             className="d-block w-100 img-fluid"
-            src="/img/carousel4.jpg"
+            src="img/carousel4.jpg"
             alt="Fourth slide"
           />
         </Carousel.Item>
         <Carousel.Item>
           <Image
             className="d-block w-100 img-fluid"
-            src="/img/carousel5.jpg"
+            src="img/carousel5.jpg"
             alt="Fifth slide"
           />
         </Carousel.Item>
         <Carousel.Item>
           <Image
             className="d-block w-100 img-fluid"
-            src="/img/carousel6.jpg"
+            src="img/carousel6.jpg"
             alt="Sixth slide"
           />
         </Carousel.Item>
         <Carousel.Item>
           <Image
             className="d-block w-100 img-fluid"
-            src="/img/carousel7.jpg"
+            src="img/carousel7.jpg"
             alt="Seventh slide"
           />
         </Carousel.Item>

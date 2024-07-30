@@ -66,31 +66,31 @@ export const Content = () => {
         {keyframes}
       </style>
       <Image
-        src="/public/img/content1.jpg"
+        src="img/content1.jpg"
         style={imageStyle}
         className="animated-image section"
         id="stationary"
       />
       <Image
-        src="/public/img/content2.png"
+        src="img/content2.png"
         style={imageStyle}
         className="animated-image"
         id="brochures"
       />
       <Image
-        src="/public/img/content3.png"
+        src="img/content3.png"
         style={imageStyle}
         className="animated-image"
         id="packaging"
       />
       <Image
-        src="/public/img/content4.png"
+        src="img/content4.png"
         style={imageStyle}
         className="animated-image"
         id="product"
       />
       <Image
-        src="/public/img/content5.png"
+        src="img/content5.png"
         style={imageStyle}
         className="animated-image"
         id="fashion"

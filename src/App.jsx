@@ -56,7 +56,7 @@ const App = () => {
 
       <Cards />
       </div>
-      <div className='section' id='footer-section'>
+      <div className='section' id='contact-section'>
 
       <CustomFooter />
       </div>

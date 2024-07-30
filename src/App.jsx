@@ -34,7 +34,7 @@ const App = () => {
         <div id="orientation-overlay">
           <img
             id="orientation-logo"
-            src="/public/img/logo.png" // Ensure this path is correct
+            src="img/logo.png" // Ensure this path is correct
             alt="Logo"
           />
           <div>

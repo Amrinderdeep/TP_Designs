@@ -1,26 +1,59 @@
+import React, { useState, useEffect } from 'react';
 import { Container } from 'react-bootstrap';
 import Carousel from 'react-bootstrap/Carousel';
 import Image from 'react-bootstrap/Image';
+import CarouselNav from './CarouselNav';
 import { FaChevronLeft, FaChevronRight } from 'react-icons/fa';
-import "/src/css/font.css";
 
-export const CarouselSections = () => {
+export const CarouselSections = ({ setActiveSection }) => {
+  const [activeIndex, setActiveIndex] = useState(0);
+  const [hoveredIndex, setHoveredIndex] = useState(null);
+  const [stickyNav, setStickyNav] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const carouselSection = document.querySelector('#carousel-section');
+      const contentSection = document.querySelector('#content-section');
+      const nav = document.querySelector('.nav-bar');
+
+      if (!carouselSection || !contentSection || !nav) return;
+
+      const carouselRect = carouselSection.getBoundingClientRect();
+      const contentRect = contentSection.getBoundingClientRect();
+      const navHeight = nav.offsetHeight;
+
+      // Check if the nav should be sticky
+      if (
+        (carouselRect.bottom > navHeight && contentRect.top > navHeight) ||
+        (contentRect.top <= navHeight && contentRect.bottom > navHeight)
+      ) {
+        setStickyNav(true);
+      } else {
+        setStickyNav(false);
+      }
+    };
+
+    const handleScrollDebounced = () => {
+      requestAnimationFrame(handleScroll);
+    };
+
+    window.addEventListener('scroll', handleScrollDebounced);
+    return () => {
+      window.removeEventListener('scroll', handleScrollDebounced);
+    };
+  }, []);
+
+  const handleSelect = (selectedIndex) => {
+    setActiveIndex(selectedIndex);
+    setActiveSection(selectedIndex);
+  };
+
   const containerStyle = {
     boxShadow: '0 4px 8px rgba(0, 0, 0, 0.5)',
     padding: '0',
     marginTop: '50px',
-    marginBottom: '70px',
+    marginBottom: '0px',
     borderRadius: '8px',
-  };
-
-  const headingStyle = {
-    fontFamily: 'boston',
-    color: 'white',
-    textAlign: 'center',
-    backgroundColor: '#004567',
-    borderRadius: '8px 8px 0 0',
-    padding: '10px',
-    margin: '0',
   };
 
   const arrowStyle = {
@@ -47,62 +80,29 @@ export const CarouselSections = () => {
     </div>
   );
 
-  const sectionTabStyle = {
-    backgroundColor: '#004567',
-  };
-
   return (
-    <Container style={containerStyle} fluid>
-      <Carousel fade interval={5000} prevIcon={prevIcon} nextIcon={nextIcon}> 
-        <Carousel.Item>
-          <Image
-            className="d-block w-100 img-fluid"
-            src="img/carousel1.jpg"
-            alt="First slide"
-          />
-        </Carousel.Item>
-        <Carousel.Item>
-          <Image
-            className="d-block w-100 img-fluid"
-            src="img/carousel2.jpg"
-            alt="Second slide"
-          />
-        </Carousel.Item>
-        <Carousel.Item>
-          <Image
-            className="d-block w-100 img-fluid"
-            src="img/carousel3.jpg"
-            alt="Third slide"
-          />
-        </Carousel.Item>
-        <Carousel.Item>
-          <Image
-            className="d-block w-100 img-fluid"
-            src="img/carousel4.jpg"
-            alt="Fourth slide"
-          />
-        </Carousel.Item>
-        <Carousel.Item>
-          <Image
-            className="d-block w-100 img-fluid"
-            src="img/carousel5.jpg"
-            alt="Fifth slide"
-          />
-        </Carousel.Item>
-        <Carousel.Item>
-          <Image
-            className="d-block w-100 img-fluid"
-            src="img/carousel6.jpg"
-            alt="Sixth slide"
-          />
-        </Carousel.Item>
-        <Carousel.Item>
-          <Image
-            className="d-block w-100 img-fluid"
-            src="img/carousel7.jpg"
-            alt="Seventh slide"
-          />
-        </Carousel.Item>
+    <Container id="carousel-section" style={containerStyle} fluid>
+      <CarouselNav
+        activeIndex={activeIndex}
+        setActiveIndex={setActiveIndex}
+        setActiveSection={setActiveSection}
+        hoveredIndex={hoveredIndex}
+        setHoveredIndex={setHoveredIndex}
+        stickyNav={stickyNav}
+      />
+      <Carousel
+        activeIndex={activeIndex}
+        onSelect={handleSelect}
+        fade
+        interval={5000}
+        prevIcon={prevIcon}
+        nextIcon={nextIcon}
+      >
+        {['img/carousel1.jpg', 'img/carousel2.jpg', 'img/carousel3.jpg', 'img/carousel4.jpg', 'img/carousel5.jpg', 'img/carousel6.jpg', 'img/carousel7.jpg'].map((src, index) => (
+          <Carousel.Item key={index}>
+            <Image className="d-block w-100 img-fluid" src={src} alt={`Slide ${index + 1}`} />
+          </Carousel.Item>
+        ))}
       </Carousel>
     </Container>
   );

@@ -42,8 +42,8 @@ export const NavBar = () => {
   const handleNavClick = (id) => {
     const element = document.getElementById(id);
     let yOffset = 0;
-    if(id == "stationary" || id=="brochures" || id=="packaging" || id=="fashion" || id=="product"){
-        yOffset = -71;
+    if(id == "stationary" || id=="brochures" || id=="packaging" || id=="fashion" || id=="product" || id=="logo" || id=="web" || id=="seo"){
+        yOffset = -120;
     }
     const yPosition = element.getBoundingClientRect().top + window.pageYOffset + yOffset;
     window.scrollTo({ top: yPosition, behavior: 'smooth' });
@@ -64,13 +64,16 @@ export const NavBar = () => {
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="me-auto">
-            <Nav.Link onClick={() => handleNavClick('carousel-section')} style={linkStyle}>Services</Nav.Link>
+            <Nav.Link onClick={() => handleNavClick('content-section')} style={linkStyle}>Services</Nav.Link>
             <NavDropdown title={<span style={dropdownToggleStyle}>Portfolio</span>} id="collapsible-nav-dropdown">
+              <NavDropdown.Item onClick={() => handleNavClick('logo')}>Logo Design</NavDropdown.Item>
               <NavDropdown.Item onClick={() => handleNavClick('stationary')}>Stationary and Branding</NavDropdown.Item>
               <NavDropdown.Item onClick={() => handleNavClick('brochures')}>Brochures and Catalogues</NavDropdown.Item>
               <NavDropdown.Item onClick={() => handleNavClick('packaging')}>Packaging Designs</NavDropdown.Item>
               <NavDropdown.Item onClick={() => handleNavClick('product')}>Product Photography</NavDropdown.Item>
               <NavDropdown.Item onClick={() => handleNavClick('fashion')}>Fashion Photography</NavDropdown.Item>
+              <NavDropdown.Item onClick={() => handleNavClick('web')}>Web Development</NavDropdown.Item>
+              <NavDropdown.Item onClick={() => handleNavClick('seo')}>SEO</NavDropdown.Item>
             </NavDropdown>
             <Nav.Link onClick={() => handleNavClick('cards-section')} style={linkStyle}>Clients</Nav.Link>
 

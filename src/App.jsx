@@ -28,6 +28,8 @@ const App = () => {
     };
   }, []);
 
+  const [activeSection, setActiveSection] = useState(0);
+
   return (
     <div className="App" id="home">
       {isPortrait && (
@@ -45,15 +47,14 @@ const App = () => {
       <NavBar />
       <Banner />
       <Intro />
-      <div className='section' id='carousel-section'>
-      <CarouselSections />
-      </div>
+      {/* <div className='section' id='carousel-section'>
+       <CarouselSections setActiveSection={setActiveSection} />
+      </div> */}
       <div className='section' id='content-section'>
 
-      <Content />
+      <Content activeSection={activeSection.toString()} />
       </div>
       <div className='section' id='cards-section'>
-
       <Cards />
       </div>
       <div className='section' id='contact-section'>

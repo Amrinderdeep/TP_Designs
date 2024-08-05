@@ -1,5 +1,6 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import Image from "react-bootstrap/Image";
+import CarouselNav from "./CarouselNav";
 import '/src/css/nav.css';
 
 export const Content = () => {
@@ -10,7 +11,6 @@ export const Content = () => {
 
       images.forEach(image => {
         const imageTop = image.getBoundingClientRect().top;
-        const imageBottom = image.getBoundingClientRect().bottom;
 
         if (imageTop < windowHeight - 70) {
           image.style.animation = 'fadeInScale 1s forwards';
@@ -25,6 +25,51 @@ export const Content = () => {
       window.removeEventListener('scroll', handleScroll);
     };
   }, []);
+
+
+  //--------------------------------------
+  // const [activeIndex, setActiveIndex] = useState(0);
+  // const [hoveredIndex, setHoveredIndex] = useState(null);
+  // const [stickyNav, setStickyNav] = useState(false);
+
+  // useEffect(() => {
+  //   const handleScroll = () => {
+  //     const carouselSection = document.querySelector('#carousel-section');
+  //     const contentSection = document.querySelector('#content-section');
+  //     const nav = document.querySelector('.nav-bar');
+
+  //     if (!carouselSection || !contentSection || !nav) return;
+
+  //     const carouselRect = carouselSection.getBoundingClientRect();
+  //     const contentRect = contentSection.getBoundingClientRect();
+  //     const navHeight = nav.offsetHeight;
+
+  //     // Check if the nav should be sticky
+  //     if (
+  //       (carouselRect.bottom > navHeight && contentRect.top > navHeight) ||
+  //       (contentRect.top <= navHeight && contentRect.bottom > navHeight)
+  //     ) {
+  //       setStickyNav(true);
+  //     } else {
+  //       setStickyNav(false);
+  //     }
+  //   };
+
+  //   const handleScrollDebounced = () => {
+  //     requestAnimationFrame(handleScroll);
+  //   };
+
+  //   window.addEventListener('scroll', handleScrollDebounced);
+  //   return () => {
+  //     window.removeEventListener('scroll', handleScrollDebounced);
+  //   };
+  // }, []);
+
+  // const handleSelect = (selectedIndex) => {
+  //   setActiveIndex(selectedIndex);
+  //   setActiveSection(selectedIndex);
+  // };
+  //--------------------------------------
 
   const imageStyle = {
     display: 'block',
@@ -65,35 +110,86 @@ export const Content = () => {
       <style>
         {keyframes}
       </style>
+      
+      {/* <CarouselNav
+        activeIndex={activeIndex}
+        setActiveIndex={setActiveIndex}
+        setActiveSection={setActiveSection}
+        hoveredIndex={hoveredIndex}
+        setHoveredIndex={setHoveredIndex}
+        stickyNav={stickyNav}
+      /> */}
+      <Image
+        src="img/carousel1.jpg"
+        style={imageStyle}
+        className="animated-image"
+        id="logo"
+      />
       <Image
         src="img/content1.jpg"
         style={imageStyle}
-        className="animated-image section"
+        className="animated-image"
         id="stationary"
       />
       <Image
-        src="img/content2.png"
+        src="img/carousel2.jpg"
         style={imageStyle}
         className="animated-image"
         id="brochures"
       />
       <Image
-        src="img/content3.png"
+        src="img/content2.png"
+        style={imageStyle}
+        className="animated-image"
+        id="content2"
+      />
+      <Image
+        src="img/carousel3.jpg"
         style={imageStyle}
         className="animated-image"
         id="packaging"
       />
       <Image
-        src="img/content4.png"
+        src="img/content3.png"
+        style={imageStyle}
+        className="animated-image"
+        id="content3"
+      />
+      <Image
+        src="img/carousel4.jpg"
         style={imageStyle}
         className="animated-image"
         id="product"
       />
       <Image
-        src="img/content5.png"
+        src="img/content4.png"
+        style={imageStyle}
+        className="animated-image"
+        id="content4"
+      />
+      <Image
+        src="img/carousel5.jpg"
         style={imageStyle}
         className="animated-image"
         id="fashion"
+      />
+      <Image
+        src="img/content5.png"
+        style={imageStyle}
+        className="animated-image"
+        id="content5"
+      />
+      <Image
+        src="img/carousel6.jpg"
+        style={imageStyle}
+        className="animated-image"
+        id="web"
+      />
+      <Image
+        src="img/carousel7.jpg"
+        style={imageStyle}
+        className="animated-image"
+        id="seo"
       />
     </>
   );
